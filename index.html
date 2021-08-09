@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>C Gang Groceries</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- WebScraping JS -->
+    <script type="text/javascript" src="assets/js/script.js"> </script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+    <script>
+
+    	
+
+    </script>
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">C Gang Groceries</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/99nuts.jpg" alt="image" >			
+					
+					<div class="bio mb-3">Welcome to C Gang Groceries!  Here, you can search for different grocery items and we will present a comparison of store prices for you!</div><!--//bio-->
+					
+			        <hr> 
+				</div><!--//profile-section-->
+                
+                <button type="button" class="btn btn-primary" onclick="JavaScript:makeList()" style="color:aqua">Make List</button>
+				
+				
+				
+				
+			</div>
+		</nav>
+    </header>
+    
+    
+    
+    
+    
+    <div class="main-wrapper">
+	    <section class="cta-section theme-bg-light py-5">
+		    <div class="container text-center">
+			    <h2 class="heading">C Gang Groceries</h2>
+			    <div class="intro">A website to compare prices of different grocery stores.</div>
+			    <form class="signup-form form-inline justify-content-center pt-3" onsubmit="return false" name="searchBar">
+                    <div class="form-group">
+                        <label class="sr-only" for="semail">Search Grocery Item</label>
+                        <input id="semail" name="searchQuery" class="form-control mr-md-1 semail" placeholder="Search Grocery">
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="JavaScript:main()">Search</button>
+                </form>
+		    </div><!--//container-->
+	    </section>
+	    <section class="blog-list px-3 py-5 p-md-5" id="bodyList" style="visibility:hidden">
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/superstore.png" alt="image">
+					    <div class="media-body">
+						    <h3 class="title mb-1"><a href="https://www.metro.ca/en/online-grocery/aisles/fruits-vegetables/fruits/bananas-plantains/banana/p/4011" target="_blank" id="superstoreInfo">Banana</a></h3>
+						    <div class="meta mb-1"><span class="date">Real Canadian Superstore</span></div>
+						    <div class="intro" id="superstorePrice">$5/lb</div>
+                            <br>
+                            <button type="button" class="btn btn-primary" onclick="JavaScript:superstoreAdd()">Add To List</button>
+						    
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    
+			    
+		    </div>
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/no frills.png" alt="image">
+					    <div class="media-body">
+						    <h3 class="title mb-1"><a href="https://www.metro.ca/en/online-grocery/aisles/fruits-vegetables/fruits/bananas-plantains/banana/p/4011" target="_blank" id="nofrillsInfo">Banana</a></h3>
+						    <div class="meta mb-1"><span class="date">No Frills</span></div>
+						    <div class="intro" id="nofrillsPrice">$4/lb</div>
+                            <br>
+                            <button type="button" class="btn btn-primary" onclick="JavaScript:nofrillsAdd()">Add To List</button>
+						    
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    
+			    
+		    </div>
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/metro.png" alt="image">
+					    <div class="media-body">
+						    <h3 class="title mb-1" id="product"><a href="https://www.metro.ca/en/online-grocery/aisles/fruits-vegetables/fruits/bananas-plantains/banana/p/4011" target="_blank" id="metroInfo">Banana</a></h3>
+						    <div class="meta mb-1"><span class="date">Metro</span></div>
+						    <div class="intro" id="metroPrice">$6/lb</div>
+                            <br>
+                            <button type="button" class="btn btn-primary" onclick="JavaScript:metroAdd()">Add To List</button>
+						    
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    
+			    
+		    </div>
+            
+            
+
+                    
+                    <div class="table table-striped my-5" id="grocery_table">
+					
+					
+                        
+                    </div>
+	    </section>
+	    
+	    
+    
+    </div><!--//main-wrapper-->
+    
+    
+    
+    
+  
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
